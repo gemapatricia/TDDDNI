@@ -1,8 +1,8 @@
 <?php
 
+use App\DNI;
 use PHPUnit\Framework\TestCase;
 
-use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
 
 Class DNITest extends TestCase{
