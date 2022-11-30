@@ -14,7 +14,10 @@ Class DNI{
             
             foreach ($caracteres as $clave => $valor){    
                 if ($clave <= 7 && is_numeric($valor)) $condiciones+=1;
-                if ($clave == 8 && !is_numeric($valor)) $condiciones+=1;
+                if ($clave == 8 && !is_numeric($valor)){
+                    if ($valor == "U" || $valor == "I" || $valor == "O" || $valor == "Ñ") throw new Exception("Estas letras no son válidas: U, I, O y Ñ");
+                    else $condiciones+=1;
+                }
             }
             if ($condiciones == 9) return true;
             else throw new Exception("La secuencia del DNI no es correcta");
