@@ -4,6 +4,8 @@ namespace App;
 
 use Exception;
 
+use function PHPUnit\Framework\throwException;
+
 Class DNI{
     public function comprobarValidez(string $dni):bool{
         if (strlen($dni)==9){
@@ -15,6 +17,7 @@ Class DNI{
                 if ($clave == 8 && !is_numeric($valor)) $condiciones+=1;
             }
             if ($condiciones == 9) return true;
+            else throw new Exception("La secuencia del DNI no es correcta");
         }
         else throw new Exception("La longitud del DNI no es válida");
     }
