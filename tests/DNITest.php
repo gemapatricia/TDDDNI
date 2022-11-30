@@ -33,12 +33,12 @@ Class DNITest extends TestCase{
         }
     }
 
-    public function testOchoCaracteresLetra():void{
+    public function testOchoNumerosLetra():void{
         $dni = new DNI();
         assertTrue($dni->comprobarValidez("00000001R"), "La secuencia del DNI no es válida");
     }
 
-    public function testNueveCaracteresNoLetra():void{
+    public function testNueveNumerosNoLetra():void{
         try{
             $dni = new DNI();
             $dni->comprobarValidez("000000012");
@@ -49,7 +49,7 @@ Class DNITest extends TestCase{
         
     }
 
-    public function testNueveCaracteres():void{
+    public function testNueveNumeros():void{
         try{
             $dni = new DNI();
             $dni->comprobarValidez("000000000");
