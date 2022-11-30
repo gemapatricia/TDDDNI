@@ -22,5 +22,10 @@ Class DNITest extends TestCase{
             assertEquals("La longitud del DNI no es válida", $e->getMessage(), "No se ha lanzado la excepción correcta");
         }
     }
+
+    public function testOchoCaracteresLetra():void{
+        $dni = new DNI();
+        assertTrue($dni->comprobarValidez("00000001R"), "La secuencia del DNI no es válida");
+    }
 }
 ?>
