@@ -69,5 +69,15 @@ Class DNITest extends TestCase{
             assertEquals("Estas letras no son válidas: U, I, O y Ñ", $e->getMessage(), "No se ha lanzado la excepción correcta");
         }
     }
+
+    public function testLetraNoValida2():void{
+        try{
+            $dni = new DNI();
+            $dni->comprobarValidez("00000000Ñ");
+        }
+        catch(Exception $e){
+            assertEquals("Estas letras no son válidas: U, I, O y Ñ", $e->getMessage(), "No se ha lanzado la excepción correcta");
+        }
+    }
 }
 ?>
