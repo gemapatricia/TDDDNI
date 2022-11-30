@@ -48,5 +48,16 @@ Class DNITest extends TestCase{
         }
         
     }
+
+    public function testNueveCaracteres():void{
+        try{
+            $dni = new DNI();
+            $dni->comprobarValidez("000000000");
+        }
+        catch(Exception $e){
+            assertEquals("La secuencia del DNI no es correcta", $e->getMessage(), "No se ha lanzado la excepción correcta");
+        }
+        
+    }
 }
 ?>
